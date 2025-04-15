@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="color-scheme" content="light dark"> -->
+    <title>eg_demojs</title>
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <main>
+        <h1>Play a Game</h1>
+        <div class="inputs">
+            <button onclick="flipCoin('Heads')">Heads</button>
+            <button onclick="flipCoin('Tails')">Tails</button>
+            <!-- <button onclick="flipCoin()">Flip Coin</button> -->
+        </div>
+        <section class="flex">
+            <div class="current">
+                <p>You chose: <span id="choice">_</span></p>
+                <p>The coin came up: <span id="flip">_</span></p>
+                <p>You: <span id="result">_</span></p>
+            </div>
+            <div class="history">
+                <p>Played: <span id="played">_</span></p>
+                <p>Won: <span id="won">_</span></p>
+                <p>Lost: <span id="lost">_</span></p>
+                <button onclick="resetScore()">Clear</button>
+            </div>
+        </section>
+    </main>
+    <script src="js/logic.js"></script>
+</body>
+</html>
