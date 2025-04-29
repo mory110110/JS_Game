@@ -9,11 +9,11 @@
 </head>
 <body>
     <main>
-        <h1>Play a Game</h1>
+        <h1>Let's Play</h1>
         <div class="inputs">
-            <button onclick="flipCoin('Heads')">Heads</button>
-            <button onclick="flipCoin('Tails')">Tails</button>
-            <!-- <button onclick="flipCoin()">Flip Coin</button> -->
+            <button onclick="rockPaperScissors('Rock')">Rock</button>
+            <button onclick="rockPaperScissors('Paper')">Paper</button>
+            <button onclick="rockPaperScissors('Scissors')">Scissors</button>
         </div>
         <section class="flex">
             <div class="current">
@@ -25,6 +25,7 @@
                 <p>Played: <span id="played">_</span></p>
                 <p>Won: <span id="won">_</span></p>
                 <p>Lost: <span id="lost">_</span></p>
+                <p>Tied: <span id="tied">_</span></p>
                 <button onclick="resetScore()">Clear</button>
             </div>
         </section>

@@ -2,32 +2,42 @@
 let gamesPlayed = 0;
 let gamesWon = 0;
 let gamesLost = 0;
+let gamesTied = 0;
 let displayWon = document.getElementById("won")
 let displayLost = document.getElementById('lost')
+let displayTied = document.getElementById('tied')
 let displayPlayed = document.getElementById('played')
 // main gameplay function
-function flipCoin(x) {
-    let pick = x; // pick is set to the passed-in parameter (from html)
+function rockPaperScissors(x) {
+    let player1 = x; // pick is set to the passed-in parameter (from html)
     let choice = document.getElementById('choice'); // to show player choice
     let flip = document.getElementById('flip'); // to show flip result
     let result = document.getElementById('result'); // to show game result
 
     // Determines the face of the toss
-    let randNum = Math.ceil(Math.random() * 2); // randomly a 1 or 2
-    let toss; // to hold the toss result
+    let randNum = Math.ceil(Math.random() * 3); // randomly a 1 or 2 or 3
+    let player2; // to hold the toss result
 
     if (randNum === 1) {
-        toss = 'Heads';
+        player2 = 'Rock';
+    } else if (randNum === 2) {
+        player2 = 'Paper';
     } else {
-        toss = 'Tails';
+        player2 = 'Scissors'
     }
 
     // determines the result of guess
     let status; // to hold the result of the guess
-    if (pick === toss ) {
-        status = "Won";
-        gamesWon = gamesWon + 1
+    if (player1 === player2) {
+        status = "Tie";
+        gamesTied++
         // gamesWon++; // increments win counter
+    } else if  (player1 === "Rock" && player2 === "Scissors" ||
+                player1 === "Paper" && player2 === "Rock" ||
+                player1 === "Scissors" && player2 === "Paper") {
+        
+        status = "Win"
+        gamesWon++
     } else {
         status = 'Lost';
         gamesLost++
@@ -39,16 +49,18 @@ function flipCoin(x) {
 
     let displayWon = document.getElementById("won")
     let displayLost = document.getElementById('lost')
+    let displayTied = document.getElementById('tied')
     let displayPlayed = document.getElementById('played')
     // read-outs of the game results
-    choice.innerText = pick;
-    flip.innerText = toss;
+    choice.innerText = player1;
+    flip.innerText = player2;
     result.innerText = status;
 
     // // updates game history
     displayPlayed.innerText = gamesPlayed;
     displayWon.innerText = gamesWon;
     displayLost.innerText = gamesLost;
+    displayTied.innerText = gamesTied
 }
 
 function resetScore() {
