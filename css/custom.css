@@ -25,15 +25,29 @@ button {
     font-size: 1em;
 }
 span {
-    font-size: 150%;
+    font-size: 100%;
     font-weight: bold;
 }
 .flex {
     display: flex;
+    flex-direction: column;
     gap: 2rem;
 }
-.current, .history {
+.player1, .player2, .history {
     border: 2px solid #ccc;
     padding: 1rem 2rem;
-    width: 400px;
+    width: 600px;
+}
+
+.history {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.score_board {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
 }

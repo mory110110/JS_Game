@@ -29,17 +29,17 @@ function rockPaperScissors(x) {
     // determines the result of guess
     let status; // to hold the result of the guess
     if (player1 === player2) {
-        status = "Tie";
+        status = "This is a Tie!";
         gamesTied++
         // gamesWon++; // increments win counter
     } else if  (player1 === "Rock" && player2 === "Scissors" ||
                 player1 === "Paper" && player2 === "Rock" ||
                 player1 === "Scissors" && player2 === "Paper") {
         
-        status = "Win"
+        status = "You Win!"
         gamesWon++
     } else {
-        status = 'Lost';
+        status = 'You Lose!';
         gamesLost++
         // gamesLost++; // increments loss counter
     }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <meta name="color-scheme" content="light dark"> -->
-    <title>eg_demojs</title>
+    <title>Play Time</title>
     <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
@@ -16,16 +16,22 @@
             <button onclick="rockPaperScissors('Scissors')">Scissors</button>
         </div>
         <section class="flex">
-            <div class="current">
-                <p>You chose: <span id="choice">_</span></p>
-                <p>The coin came up: <span id="flip">_</span></p>
-                <p>You: <span id="result">_</span></p>
+            <div class="player1"> <!-- previously flex -->
+                <p>Player 1 chose: <span id="choice">_</span></p>
             </div>
-            <div class="history">
-                <p>Played: <span id="played">_</span></p>
-                <p>Won: <span id="won">_</span></p>
-                <p>Lost: <span id="lost">_</span></p>
-                <p>Tied: <span id="tied">_</span></p>
+            <div    class="player2">
+                <p>Player 2 chose: <span id="flip">_</span></p>
+            </div>
+
+            <div class="history">               
+                
+                <h3><span id="result">_</span></h3>
+                <p>Games Played: <span id="played">_</span></p>
+                <div class="score_board">
+                    <p>Won: <span id="won">_</span></p>
+                    <p>Lost: <span id="lost">_</span></p>
+                    <p>Tied: <span id="tied">_</span></p>
+                </div>
                 <button onclick="resetScore()">Clear</button>
             </div>
         </section>
