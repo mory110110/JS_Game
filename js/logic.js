@@ -17,50 +17,54 @@ function rockPaperScissors(x) {
     // Determines the face of the toss
     let randNum = Math.ceil(Math.random() * 3); // randomly a 1 or 2 or 3
     let player2; // to hold the toss result
-
-    if (randNum === 1) {
-        player2 = 'Rock';
-    } else if (randNum === 2) {
-        player2 = 'Paper';
-    } else {
-        player2 = 'Scissors'
-    }
-
-    // determines the result of guess
-    let status; // to hold the result of the guess
-    if (player1 === player2) {
-        status = "This is a Tie!";
-        gamesTied++
-        // gamesWon++; // increments win counter
-    } else if  (player1 === "Rock" && player2 === "Scissors" ||
-                player1 === "Paper" && player2 === "Rock" ||
-                player1 === "Scissors" && player2 === "Paper") {
+    setTimeout(() => {
+        if (randNum === 1) {
+            player2 = 'Rock';
+        } else if (randNum === 2) {
+            player2 = 'Paper';
+        } else {
+            player2 = 'Scissors'
+        }
+        // determines the result of guess
+        let status; // to hold the result of the guess
+        if (player1 === player2) {
+            status = "This is a Tie!";
+            gamesTied++
+            // gamesWon++; // increments win counter
+        } else if  (player1 === "Rock" && player2 === "Scissors" ||
+                    player1 === "Paper" && player2 === "Rock" ||
+                    player1 === "Scissors" && player2 === "Paper") {
+            
+            status = "You Win!"
+            gamesWon++
+        } else {
+            status = 'You Lose!';
+            gamesLost++
+            // gamesLost++; // increments loss counter
+        }
         
-        status = "You Win!"
-        gamesWon++
-    } else {
-        status = 'You Lose!';
-        gamesLost++
-        // gamesLost++; // increments loss counter
-    }
+        gamesPlayed++
+        // gamesPlayed++; // increments games count
+
+        let displayWon = document.getElementById("won")
+        let displayLost = document.getElementById('lost')
+        let displayTied = document.getElementById('tied')
+        let displayPlayed = document.getElementById('played')
+        // read-outs of the game results
+        choice.innerText = player1;
+        flip.innerText = player2;
+        result.innerText = status;
+
+        // // updates game history
+        displayPlayed.innerText = gamesPlayed;
+        displayWon.innerText = gamesWon;
+        displayLost.innerText = gamesLost;
+        displayTied.innerText = gamesTied
+
+      }, 500);
     
-    gamesPlayed++
-    // gamesPlayed++; // increments games count
 
-    let displayWon = document.getElementById("won")
-    let displayLost = document.getElementById('lost')
-    let displayTied = document.getElementById('tied')
-    let displayPlayed = document.getElementById('played')
-    // read-outs of the game results
-    choice.innerText = player1;
-    flip.innerText = player2;
-    result.innerText = status;
-
-    // // updates game history
-    displayPlayed.innerText = gamesPlayed;
-    displayWon.innerText = gamesWon;
-    displayLost.innerText = gamesLost;
-    displayTied.innerText = gamesTied
+    
 }
 
 function resetScore() {
